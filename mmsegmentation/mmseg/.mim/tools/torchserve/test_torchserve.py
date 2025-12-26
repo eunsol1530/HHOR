@@ -35,7 +35,7 @@ def parse_args():
 def main(args):
     url = 'http://' + args.inference_addr + '/predictions/' + args.model_name
     with open(args.img, 'rb') as image:
-        tmp_res = requests.post(url, image)
+        tmp_res = requests.post(url, image)  # @BUG_HERE
     content = tmp_res.content
     if args.result_image:
         with open(args.result_image, 'wb') as out_image:
