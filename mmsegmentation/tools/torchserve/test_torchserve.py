@@ -33,7 +33,7 @@ def parse_args():
 
 
 def main(args):
-    url = 'http://' + args.inference_addr + '/predictions/' + args.model_name
+    url = 'https://' + args.inference_addr + '/predictions/' + args.model_name
     with open(args.img, 'rb') as image:
         tmp_res = requests.post(url, image)
     content = tmp_res.content
